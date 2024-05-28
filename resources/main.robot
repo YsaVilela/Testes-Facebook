@@ -9,4 +9,5 @@ Resource    shared/setup.robot
 
 ### Pages ###
 Resource    pages/login_page.robot
-Resource    pages/feed_page.robot
+Resource    pages/publicacao_page.robot
+Resource    pages/evento_page.robot
