@@ -28,20 +28,20 @@ E digite o conteudo
     Input Text                        ${AREA_CONTEUDO}           ${Conteudo} 
 
 E pressione o botao de publicar
-    Click Element                     ${BOTAO_CRIAR_PUBLICACAO}
+    Click Element                        ${BOTAO_CRIAR_PUBLICACAO}
+    Wait Until Element Is Not Visible    ${CARREGANDO_PUBLICACAO}    30s   
 
 E verificar se o botao de publicar foi habilitado
     Element Should Not Be Visible     ${BOTAO_DESATIVADO} 
 
 Entao o botao de publicar deve estar desabilitado
     Wait Until Element Is Visible     ${BOTAO_DESATIVADO}         10s
-    Element Should Not Be Visible     ${BOTAO_DESATIVADO} 
+    Element Should Be Visible         ${BOTAO_DESATIVADO} 
 
 Entao a publicacao deve ser exibida no feed
-    Wait Until Element Is Not Visible    ${CARREGANDO_PUBLICACAO}          30s   
-    ${Publicacao}                        xpath=//div[contains(text(), "${CONTEUDO}")]  
-    Wait Until Element Is Visible        ${Publicacao}                     10s    
-    Element Should Be Visible            ${Publicacao}
+    ${Publicacao}                        Set Variable                xpath=//div[contains(text(), '${CONTEUDO}')]
+    Wait Until Element Is Visible        ${Publicacao}               10s    
+    Element Should Be Visible            ${Publicacao}    
 
 E adicione uma midia  
     Copiar Imagem para Area de Tranferencia    ${CAMINHO_IMAGEM}
@@ -49,7 +49,6 @@ E adicione uma midia
     Click Element                              ${AREA_CONTEUDO}    
     Foco no Browser
     Colar da área de transferência
-    Capture Page Screenshot                    ../../prints/captura-{index}.jpg
     Wait Until Element Is Visible              ${IMAGEM_ANEXADA}          90s
     Element Should Be Visible                  ${IMAGEM_ANEXADA}
 

@@ -1,0 +1,1614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-05-29T10:56:20.102491" rpa="false" schemaversion="5">
+<suite id="s1" name="Testes" source="C:\dev\workspace\Teste-Facebook\testes">
+<suite id="s1-s1" name="Evento" source="C:\dev\workspace\Teste-Facebook\testes\evento.robot">
+<test id="s1-s1-t1" name="Caso de Teste: Criar evento apenas com os campos obrigatorios" line="7">
+<kw name="Dado que eu acesse e realize o login" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:20.789403" level="INFO">Opening browser 'Chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>url=https://www.facebook.com/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-29T10:56:20.789403" elapsed="2.411890"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-29T10:56:23.201293" elapsed="0.066918"/>
+</kw>
+<kw name="Dado que eu preencha o email" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:23.271809" elapsed="0.038451"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:23.310260" level="INFO">Typing text 'ysavilela.dev@gmail.com' into text field 'css=input[data-testid="royal_email"]'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:23.310260" elapsed="0.198670"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:23.269739" elapsed="0.240051"/>
+</kw>
+<kw name="E preencha a senha" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:23.510847" elapsed="0.017670"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:23.528517" level="INFO">Typing text 'ysa.dev030515' into text field 'id:pass'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:23.528517" elapsed="0.100664"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:23.509790" elapsed="0.119391"/>
+</kw>
+<kw name="E clique no botao de entrar" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:23.630242" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Entrar')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:23.630242" elapsed="0.055777"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:23.629181" elapsed="0.057842"/>
+</kw>
+<kw name="Entao sou redirecionado para o feed inicial" owner="login_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-29T10:56:28.689908" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-29T10:56:23.688687" elapsed="5.001221"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:28.689908" level="INFO">Executing JavaScript:
+document.querySelector('.__fb-light-mode.x1n2onr6.x1vjfegm').remove();
+Without any arguments.</msg>
+<arg>document.querySelector('.${DIV_BLOQUEIO.replace(' ', '.')}').remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-05-29T10:56:28.689908" elapsed="0.012320"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:28.716923" level="INFO">Element 'css:.__fb-light-mode.x1n2onr6.x1vjfegm' did not exist.</msg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:28.702228" elapsed="0.014695"/>
+</kw>
+<arg>Element Should Not Be Visible</arg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-05-29T10:56:28.702228" elapsed="0.014695"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ICONE_FORYOU}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:28.717932" elapsed="0.022196"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:28.741210" level="INFO">Clicking element 'css=a[aria-label="Página inicial"]'.</msg>
+<arg>${ICONE_FORYOU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:28.740128" elapsed="0.167761"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:23.687657" elapsed="5.221241"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:20.789403" elapsed="8.119495"/>
+</kw>
+<kw name="Dado que eu abra a aba de eventos" owner="evento_page">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:29.199226" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-29T10:56:29.199226" level="FAIL">Element with locator 'xpath=//span[contains(text(), 'Eventos')]' not found.</msg>
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-05-29T10:56:28.911909" elapsed="0.287317">Element with locator 'xpath=//span[contains(text(), 'Eventos')]' not found.</status>
+</kw>
+<msg time="2024-05-29T10:56:29.199226" level="INFO">${CriarEventoVisivel} = False</msg>
+<var>${CriarEventoVisivel}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-05-29T10:56:28.911909" elapsed="0.287317"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clicar em Ver Mais" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_VER_MAIS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:29.199226" elapsed="0.040300"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:29.239526" level="INFO">Clicking element 'xpath=//div[@aria-label="Atalhos"]/div/div/div/div/div/div/div[1]/div[1]'.</msg>
+<arg>${BOTAO_VER_MAIS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:29.239526" elapsed="0.067026"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:29.199226" elapsed="0.107326"/>
+</kw>
+<arg>'${CriarEventoVisivel}' == 'False'</arg>
+<arg>Clicar em Ver Mais</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-29T10:56:29.199226" elapsed="0.107326"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:29.306552" elapsed="0.303306"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:29.609858" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Eventos')]'.</msg>
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:29.609858" elapsed="0.339445"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:28.910932" elapsed="1.038371"/>
+</kw>
+<kw name="E clique em criar novo evento" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_CRIAR_NOVO_EVENTO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:29.950309" elapsed="0.316109"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:30.266418" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Criar novo evento')]'.</msg>
+<arg>${BOTAO_CRIAR_NOVO_EVENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:30.266418" elapsed="0.094080"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:29.950309" elapsed="0.410189"/>
+</kw>
+<kw name="E complete o nome do evento" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_NOME_EVENTO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:30.362555" elapsed="0.476035"/>
+</kw>
+<kw name="Word" owner="FakerLibrary">
+<msg time="2024-05-29T10:56:30.838590" level="INFO">${NomeEvento} = minus</msg>
+<var>${NomeEvento}</var>
+<doc>Generate a word.</doc>
+<status status="PASS" start="2024-05-29T10:56:30.838590" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:30.838590" level="INFO">Typing text 'minus' into text field 'xpath=//label[@aria-label="Nome do evento"]//input'.</msg>
+<arg>${CAMPO_NOME_EVENTO}</arg>
+<arg>${NomeEvento}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:30.838590" elapsed="0.382269"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:30.361497" elapsed="0.860434"/>
+</kw>
+<kw name="E complete quem pode ver o evento" owner="evento_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:31.221931" level="INFO">Clicking element 'css=label[aria-label="Quem pode ver?"]'.</msg>
+<arg>${SELETOR_QUEM_PODE_VER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:31.221931" elapsed="0.116015"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SELECIONAR_PRIVADO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:31.337946" elapsed="0.248068"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:31.586014" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Privado')]'.</msg>
+<arg>${SELECIONAR_PRIVADO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:31.586014" elapsed="0.104636"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:31.221931" elapsed="0.468719"/>
+</kw>
+<kw name="E clique no botao criar evento" owner="evento_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:31.690650" level="INFO">Clicking element 'css=div[aria-label="Criar evento"]'.</msg>
+<arg>${BOTAO_CRIAR_EVENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:31.690650" elapsed="0.131564"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:31.690650" elapsed="0.132580"/>
+</kw>
+<kw name="Entao e exibido a mesagem de evento criado com sucesso" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_EVENTO_CRIADO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:31.824229" elapsed="7.264972"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:39.121387" level="INFO">Element 'xpath=//span[contains(text(), 'Seu evento foi criado.')]' is displayed.</msg>
+<arg>${MENSAGEM_EVENTO_CRIADO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:39.089201" elapsed="0.032186"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:31.823230" elapsed="7.298157"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-29T10:56:39.121387" elapsed="2.309072"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:39.121387" elapsed="2.309072"/>
+</kw>
+<doc>Verifica se todos os campos obrigatórios aceitam entrada, habilita o botão de criar evento após preencher os campos obrigatórios e exibe mensagem de sucesso após ser criado.</doc>
+<tag>Criar evento</tag>
+<status status="PASS" start="2024-05-29T10:56:20.789403" elapsed="20.641056"/>
+</test>
+<test id="s1-s1-t2" name="Caso de Teste: Verifica se botao de criar evento permanece desabilitado se nao houver completado os campos obrigatorios" line="17">
+<kw name="Dado que eu acesse e realize o login" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:41.430459" level="INFO">Opening browser 'Chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>url=https://www.facebook.com/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-29T10:56:41.430459" elapsed="2.193650"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-29T10:56:43.624109" elapsed="0.048526"/>
+</kw>
+<kw name="Dado que eu preencha o email" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:43.673641" elapsed="0.041851"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:43.715492" level="INFO">Typing text 'ysavilela.dev@gmail.com' into text field 'css=input[data-testid="royal_email"]'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:43.715492" elapsed="0.250796"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:43.672635" elapsed="0.293916"/>
+</kw>
+<kw name="E preencha a senha" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:43.967305" elapsed="0.017361"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:43.984666" level="INFO">Typing text 'ysa.dev030515' into text field 'id:pass'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:43.984666" elapsed="0.118242"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:43.966817" elapsed="0.136091"/>
+</kw>
+<kw name="E clique no botao de entrar" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:44.103932" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Entrar')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:44.102908" elapsed="0.048627"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:44.102908" elapsed="0.048627"/>
+</kw>
+<kw name="Entao sou redirecionado para o feed inicial" owner="login_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-29T10:56:49.156215" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-29T10:56:44.155674" elapsed="5.000541"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:49.161212" level="INFO">Executing JavaScript:
+document.querySelector('.__fb-light-mode.x1n2onr6.x1vjfegm').remove();
+Without any arguments.</msg>
+<arg>document.querySelector('.${DIV_BLOQUEIO.replace(' ', '.')}').remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-05-29T10:56:49.156215" elapsed="0.016108"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:49.187101" level="INFO">Element 'css:.__fb-light-mode.x1n2onr6.x1vjfegm' did not exist.</msg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:49.173342" elapsed="0.013759"/>
+</kw>
+<arg>Element Should Not Be Visible</arg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-05-29T10:56:49.173342" elapsed="0.013759"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ICONE_FORYOU}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:49.187101" elapsed="0.023463"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:49.211542" level="INFO">Clicking element 'css=a[aria-label="Página inicial"]'.</msg>
+<arg>${ICONE_FORYOU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:49.211542" elapsed="0.165139"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:44.154686" elapsed="5.223054"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:41.430459" elapsed="7.947281"/>
+</kw>
+<kw name="Dado que eu abra a aba de eventos" owner="evento_page">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:49.635427" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-29T10:56:49.636429" level="FAIL">Element with locator 'xpath=//span[contains(text(), 'Eventos')]' not found.</msg>
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-05-29T10:56:49.381976" elapsed="0.256461">Element with locator 'xpath=//span[contains(text(), 'Eventos')]' not found.</status>
+</kw>
+<msg time="2024-05-29T10:56:49.638437" level="INFO">${CriarEventoVisivel} = False</msg>
+<var>${CriarEventoVisivel}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-05-29T10:56:49.380841" elapsed="0.257596"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clicar em Ver Mais" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_VER_MAIS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:49.640435" elapsed="0.022637"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:49.663072" level="INFO">Clicking element 'xpath=//div[@aria-label="Atalhos"]/div/div/div/div/div/div/div[1]/div[1]'.</msg>
+<arg>${BOTAO_VER_MAIS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:49.663072" elapsed="0.076490"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:49.639428" elapsed="0.100134"/>
+</kw>
+<arg>'${CriarEventoVisivel}' == 'False'</arg>
+<arg>Clicar em Ver Mais</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-29T10:56:49.639428" elapsed="0.100134"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:49.739562" elapsed="0.267552"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:50.007114" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Eventos')]'.</msg>
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:50.007114" elapsed="0.098504"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:49.379735" elapsed="0.726406"/>
+</kw>
+<kw name="E clique em criar novo evento" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_CRIAR_NOVO_EVENTO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:50.107167" elapsed="1.546661"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:51.653828" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Criar novo evento')]'.</msg>
+<arg>${BOTAO_CRIAR_NOVO_EVENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:51.653828" elapsed="0.179104"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:50.106141" elapsed="1.726791"/>
+</kw>
+<kw name="Entao o botao de criar evento deve estar desabilitado" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_CRIAR_EVENTO_DESATIVADO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:51.832932" elapsed="0.312461"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:52.161016" level="INFO">Element 'xpath=//div[@aria-label="Criar evento" and @aria-disabled="true"]' is displayed.</msg>
+<arg>${BOTAO_CRIAR_EVENTO_DESATIVADO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:52.145393" elapsed="0.015623"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:51.832932" elapsed="0.328084"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-29T10:56:52.161016" elapsed="2.271885"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:52.161016" elapsed="2.271885"/>
+</kw>
+<doc>Verifica se o botão de criar evento permanece desabilitado se os campos de "nome do evento" e "quem pode ver" não estiverem preenchidos</doc>
+<tag>Criar evento</tag>
+<status status="PASS" start="2024-05-29T10:56:41.430459" elapsed="13.002442"/>
+</test>
+<test id="s1-s1-t3" name="Caso de Teste: Criar um evento com todos os campos preenchidos" line="24">
+<kw name="Dado que eu acesse e realize o login" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:54.432901" level="INFO">Opening browser 'Chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>url=https://www.facebook.com/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-29T10:56:54.432901" elapsed="2.236262"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-29T10:56:56.669163" elapsed="0.028794"/>
+</kw>
+<kw name="Dado que eu preencha o email" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:56.699259" elapsed="0.027855"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:56.727114" level="INFO">Typing text 'ysavilela.dev@gmail.com' into text field 'css=input[data-testid="royal_email"]'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:56.727114" elapsed="0.148157"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:56.698338" elapsed="0.177734"/>
+</kw>
+<kw name="E preencha a senha" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:56:56.876072" elapsed="0.006875"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:56.882947" level="INFO">Typing text 'ysa.dev030515' into text field 'id:pass'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:56.882947" elapsed="0.215709"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:56.876072" elapsed="0.222781"/>
+</kw>
+<kw name="E clique no botao de entrar" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:56:57.100905" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Entrar')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:56:57.100905" elapsed="0.075891"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:57.099905" elapsed="0.076891"/>
+</kw>
+<kw name="Entao sou redirecionado para o feed inicial" owner="login_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-29T10:57:02.177997" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-29T10:56:57.177624" elapsed="5.000373"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:02.179634" level="INFO">Executing JavaScript:
+document.querySelector('.__fb-light-mode.x1n2onr6.x1vjfegm').remove();
+Without any arguments.</msg>
+<arg>document.querySelector('.${DIV_BLOQUEIO.replace(' ', '.')}').remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-05-29T10:57:02.177997" elapsed="0.019652"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:02.213335" level="INFO">Element 'css:.__fb-light-mode.x1n2onr6.x1vjfegm' did not exist.</msg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:02.198524" elapsed="0.014811"/>
+</kw>
+<arg>Element Should Not Be Visible</arg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-05-29T10:57:02.198524" elapsed="0.014811"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ICONE_FORYOU}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:02.213335" elapsed="0.020225"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:02.233560" level="INFO">Clicking element 'css=a[aria-label="Página inicial"]'.</msg>
+<arg>${ICONE_FORYOU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:02.233560" elapsed="0.156420"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:57.177624" elapsed="5.212356"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:56:54.432901" elapsed="7.957079"/>
+</kw>
+<kw name="Dado que eu abra a aba de eventos" owner="evento_page">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:02.667559" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-29T10:57:02.667559" level="FAIL">Element with locator 'xpath=//span[contains(text(), 'Eventos')]' not found.</msg>
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-05-29T10:57:02.390977" elapsed="0.277675">Element with locator 'xpath=//span[contains(text(), 'Eventos')]' not found.</status>
+</kw>
+<msg time="2024-05-29T10:57:02.668652" level="INFO">${CriarEventoVisivel} = False</msg>
+<var>${CriarEventoVisivel}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-05-29T10:57:02.390977" elapsed="0.277675"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clicar em Ver Mais" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_VER_MAIS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:02.669747" elapsed="0.012274"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:02.682021" level="INFO">Clicking element 'xpath=//div[@aria-label="Atalhos"]/div/div/div/div/div/div/div[1]/div[1]'.</msg>
+<arg>${BOTAO_VER_MAIS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:02.682021" elapsed="0.091082"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:02.669747" elapsed="0.103356"/>
+</kw>
+<arg>'${CriarEventoVisivel}' == 'False'</arg>
+<arg>Clicar em Ver Mais</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-29T10:57:02.669747" elapsed="0.103356"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:02.773103" elapsed="0.284718"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:03.057821" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Eventos')]'.</msg>
+<arg>${ABRIR_SESSAO_EVENTOS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:03.057821" elapsed="0.121529"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:02.390977" elapsed="0.788373"/>
+</kw>
+<kw name="E clique em criar novo evento" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_CRIAR_NOVO_EVENTO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:03.181455" elapsed="1.357922"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:04.539377" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Criar novo evento')]'.</msg>
+<arg>${BOTAO_CRIAR_NOVO_EVENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:04.539377" elapsed="0.048556"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:03.180406" elapsed="1.407527"/>
+</kw>
+<kw name="E complete o nome do evento" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_NOME_EVENTO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:04.590025" elapsed="0.508833"/>
+</kw>
+<kw name="Word" owner="FakerLibrary">
+<msg time="2024-05-29T10:57:05.098858" level="INFO">${NomeEvento} = vitae</msg>
+<var>${NomeEvento}</var>
+<doc>Generate a word.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.098858" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:05.098858" level="INFO">Typing text 'vitae' into text field 'xpath=//label[@aria-label="Nome do evento"]//input'.</msg>
+<arg>${CAMPO_NOME_EVENTO}</arg>
+<arg>${NomeEvento}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.098858" elapsed="0.216879"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:04.588931" elapsed="0.728728"/>
+</kw>
+<kw name="E complete quem pode ver o evento" owner="evento_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:05.319664" level="INFO">Clicking element 'css=label[aria-label="Quem pode ver?"]'.</msg>
+<arg>${SELETOR_QUEM_PODE_VER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.319664" elapsed="0.066410"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SELECIONAR_PRIVADO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.386074" elapsed="0.251624"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:05.637698" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Privado')]'.</msg>
+<arg>${SELECIONAR_PRIVADO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.637698" elapsed="0.097290"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:05.319664" elapsed="0.415324"/>
+</kw>
+<kw name="E complete a data de inicio" owner="evento_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:05.736676" level="INFO">Clicking element 'xpath=//label[@aria-label="Data de início"]'.</msg>
+<arg>${SELECIONAR_DATA_INICIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.736676" elapsed="0.125825"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:05.903056" level="INFO">Element 'xpath=//span[@aria-hidden="true"]/span[text()="20"]' is displayed.</msg>
+<arg>${EVENTO_DIA_20}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.862501" elapsed="0.040555"/>
+</kw>
+<msg time="2024-05-29T10:57:05.903056" level="INFO">${evento_visivel} = True</msg>
+<var>${evento_visivel}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${EVENTO_DIA_20}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.862501" elapsed="0.040555"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${evento_visivel}' == 'False'</arg>
+<arg>Clicar Em Vizualizar Proximo Mes</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.903056" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EVENTO_DIA_20}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.903056" elapsed="0.021618"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:05.924674" level="INFO">Clicking element 'xpath=//span[@aria-hidden="true"]/span[text()="20"]'.</msg>
+<arg>${EVENTO_DIA_20}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:05.924674" elapsed="0.114628"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:05.734988" elapsed="0.304314"/>
+</kw>
+<kw name="E complete detalhes do evento" owner="evento_page">
+<kw name="Text" owner="FakerLibrary">
+<msg time="2024-05-29T10:57:06.039302" level="INFO">${Detalhes} = Laudantium animi libero ullam quis architecto. Sint ad aliquid laudantium veniam. Tempore soluta itaque eos nemo.</msg>
+<var>${Detalhes}</var>
+<doc>Generate a text string.</doc>
+<status status="PASS" start="2024-05-29T10:57:06.039302" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:06.039302" level="INFO">Typing text 'Laudantium animi libero ullam quis architecto. Sint ad aliquid laudantium veniam. Tempore soluta itaque eos nemo.' into text field 'xpath=//label[@aria-label="Quais são os detalhes deste evento?"]/div/div/div/textarea'.</msg>
+<arg>${CAMPO_DETALHES_EVENTO}</arg>
+<arg>${Detalhes}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:06.039302" elapsed="1.297930"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:06.039302" elapsed="1.297930"/>
+</kw>
+<kw name="E completar modalidade do evento online" owner="evento_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:07.338747" level="INFO">Clicking element 'xpath=//label[@aria-label="É presencial ou virtual?"]'.</msg>
+<arg>${SELETOR_MODALIDADE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:07.338747" elapsed="0.134826"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SELECIONAR_VIRTUAL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:07.473573" elapsed="0.034666"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:07.509326" level="INFO">Clicking element 'xpath=//span[contains(text(),'Virtual')]'.</msg>
+<arg>${SELECIONAR_VIRTUAL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:07.509326" elapsed="0.115998"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SELECIONAR_CAMPO_OUTRO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:07.627335" elapsed="0.039302"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:07.666637" level="INFO">Clicking element 'xpath=//span[contains(text(),'Outro')]'.</msg>
+<arg>${SELECIONAR_CAMPO_OUTRO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:07.666637" elapsed="0.122181"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:07.338194" elapsed="0.450624"/>
+</kw>
+<kw name="E clique no botao criar evento" owner="evento_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:07.788818" level="INFO">Clicking element 'css=div[aria-label="Criar evento"]'.</msg>
+<arg>${BOTAO_CRIAR_EVENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:07.788818" elapsed="0.108048"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:07.788818" elapsed="0.108048"/>
+</kw>
+<kw name="Entao e exibido a mesagem de evento criado com sucesso" owner="evento_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_EVENTO_CRIADO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:07.896866" elapsed="6.324759"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:14.249906" level="INFO">Element 'xpath=//span[contains(text(), 'Seu evento foi criado.')]' is displayed.</msg>
+<arg>${MENSAGEM_EVENTO_CRIADO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:14.222628" elapsed="0.027278"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:07.896866" elapsed="6.353040"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-29T10:57:14.250909" elapsed="3.870927"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:14.250909" elapsed="3.870927"/>
+</kw>
+<doc>Verifica se todos os campos aceitam entrada, permite upload de imagem de capa, habilita o botão de criar evento após preencher os campos obrigatórios e exibe mensagem de sucesso após ser criado.</doc>
+<tag>Criar evento</tag>
+<status status="PASS" start="2024-05-29T10:56:54.432901" elapsed="23.688935"/>
+</test>
+<status status="PASS" start="2024-05-29T10:56:20.133708" elapsed="57.988128"/>
+</suite>
+<suite id="s1-s2" name="Login" source="C:\dev\workspace\Teste-Facebook\testes\login.robot">
+<test id="s1-s2-t1" name="Caso de Teste: Realizar login com credenciais corretas" line="7">
+<kw name="Dado que eu acesse o site" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:18.152708" level="INFO">Opening browser 'Chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>url=https://www.facebook.com/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-29T10:57:18.152708" elapsed="2.257923"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-29T10:57:20.410631" elapsed="0.037340"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:18.152708" elapsed="2.296407"/>
+</kw>
+<kw name="Dado que eu preencha o email" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:20.451644" elapsed="0.041717"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:20.494437" level="INFO">Typing text 'ysavilela.dev@gmail.com' into text field 'css=input[data-testid="royal_email"]'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:20.493361" elapsed="0.204302"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:20.450634" elapsed="0.247029"/>
+</kw>
+<kw name="E preencha a senha" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:20.699675" elapsed="0.020618"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:20.720293" level="INFO">Typing text 'ysa.dev030515' into text field 'id:pass'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:20.720293" elapsed="0.101813"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:20.698684" elapsed="0.123422"/>
+</kw>
+<kw name="E clique no botao de entrar" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:20.823134" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Entrar')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:20.823134" elapsed="0.053769"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:20.822106" elapsed="0.054797"/>
+</kw>
+<kw name="Entao sou redirecionado para o feed inicial" owner="login_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-29T10:57:25.880993" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-29T10:57:20.879406" elapsed="5.001587"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:25.880993" level="INFO">Executing JavaScript:
+document.querySelector('.__fb-light-mode.x1n2onr6.x1vjfegm').remove();
+Without any arguments.</msg>
+<arg>document.querySelector('.${DIV_BLOQUEIO.replace(' ', '.')}').remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-05-29T10:57:25.880993" elapsed="0.019408"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:25.917969" level="INFO">Element 'css:.__fb-light-mode.x1n2onr6.x1vjfegm' did not exist.</msg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:25.900401" elapsed="0.017568"/>
+</kw>
+<arg>Element Should Not Be Visible</arg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-05-29T10:57:25.900401" elapsed="0.017568"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ICONE_FORYOU}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:25.917969" elapsed="0.022901"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:25.941868" level="INFO">Clicking element 'css=a[aria-label="Página inicial"]'.</msg>
+<arg>${ICONE_FORYOU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:25.941868" elapsed="0.159585"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:20.879406" elapsed="5.222047"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-29T10:57:26.102368" elapsed="2.194333"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:26.102368" elapsed="2.194333"/>
+</kw>
+<doc>Ao efetuar login com as credenciais corretas deve haver o redirecionamento para o feed inicial</doc>
+<tag>Login</tag>
+<status status="PASS" start="2024-05-29T10:57:18.150660" elapsed="10.146041"/>
+</test>
+<test id="s1-s2-t2" name="Caso de Teste: Verificar mensagens de erro do campo de email" line="15">
+<kw name="Dado que eu acesse o site" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:28.296701" level="INFO">Opening browser 'Chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>url=https://www.facebook.com/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-29T10:57:28.296701" elapsed="2.228017"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-29T10:57:30.524718" elapsed="0.052744"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:28.296701" elapsed="2.280761"/>
+</kw>
+<kw name="E clique no botao de entrar" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:30.584502" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Entrar')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:30.581926" elapsed="0.148368"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:30.580477" elapsed="0.149817"/>
+</kw>
+<kw name="Então verifico se mensagem de erro do email foi exibida" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_EMAIL}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:30.732569" elapsed="0.835351"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:31.587095" level="INFO">Element 'xpath=//div[contains(text(), 'O email ou o número de celular que você inseriu não está conectado a uma conta. ')]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_EMAIL}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:31.567920" elapsed="0.019175"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:30.731517" elapsed="0.856675"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-29T10:57:31.589197" elapsed="2.162598"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:31.588192" elapsed="2.163603"/>
+</kw>
+<doc>Ao deixar o campo de email nula deve ser exibida uma mensagem de erro clara para erro no e-mail/telefone 'O e-mail ou o número de celular que você inseriu não está conectado a uma conta.’</doc>
+<tag>Login</tag>
+<status status="PASS" start="2024-05-29T10:57:28.296701" elapsed="5.456478"/>
+</test>
+<test id="s1-s2-t3" name="Caso de Teste: Verificar mensagens de erro do campo de senha" line="21">
+<kw name="Dado que eu acesse o site" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:33.755362" level="INFO">Opening browser 'Chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>url=https://www.facebook.com/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-29T10:57:33.755362" elapsed="3.018558"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-29T10:57:36.773920" elapsed="0.045409"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:33.755362" elapsed="3.063967"/>
+</kw>
+<kw name="Dado que eu preencha o email" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:36.819329" elapsed="0.053466"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:36.872795" level="INFO">Typing text 'ysavilela.dev@gmail.com' into text field 'css=input[data-testid="royal_email"]'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:36.872795" elapsed="0.200640"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:36.819329" elapsed="0.254106"/>
+</kw>
+<kw name="E clique no botao de entrar" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:37.076006" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Entrar')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:37.076006" elapsed="0.070146"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:37.075017" elapsed="0.072136"/>
+</kw>
+<kw name="E indique que quero continuar com a senha" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_SEGUIR_COM_SENHA}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:37.148083" elapsed="2.884219"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:40.032302" level="INFO">Clicking element 'xpath=//a[contains(text(), 'Entrar com a senha')]'.</msg>
+<arg>${BOTAO_SEGUIR_COM_SENHA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:40.032302" elapsed="0.889786"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:37.147153" elapsed="3.774935"/>
+</kw>
+<kw name="E coloco a senha de forma incorreta" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:40.922088" elapsed="0.039730"/>
+</kw>
+<kw name="Word" owner="FakerLibrary">
+<msg time="2024-05-29T10:57:40.961818" level="INFO">${SenhaInvalida} = officiis</msg>
+<var>${SenhaInvalida}</var>
+<doc>Generate a word.</doc>
+<status status="PASS" start="2024-05-29T10:57:40.961818" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:40.962953" level="INFO">Typing text 'officiis' into text field 'id:pass'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SenhaInvalida}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:40.961818" elapsed="0.249750"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:40.922088" elapsed="0.289480"/>
+</kw>
+<kw name="E clique no botao de entrar" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:41.211568" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Entrar')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:41.211568" elapsed="0.086966"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:41.211568" elapsed="0.087970"/>
+</kw>
+<kw name="Então verifico se mensagem de erro da senha foi exibida" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_SENHA}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:41.302539" elapsed="1.879931"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:43.203228" level="INFO">Element 'xpath=//div[contains(text(), 'A senha que você inseriu está incorreta. ')]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:43.182470" elapsed="0.020758"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:41.300579" elapsed="1.902649"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-29T10:57:43.203228" elapsed="2.209894"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:43.203228" elapsed="2.209894"/>
+</kw>
+<doc>Ao deixar o campo de senha nulo deve ser exibida uma mensagem de erro clara para erro no e-mail/telefone 'A senha que você inseriu está incorreta.’</doc>
+<tag>Login</tag>
+<status status="PASS" start="2024-05-29T10:57:33.755362" elapsed="11.657760"/>
+</test>
+<status status="PASS" start="2024-05-29T10:57:18.121836" elapsed="27.291286"/>
+</suite>
+<suite id="s1-s3" name="Publicacao" source="C:\dev\workspace\Teste-Facebook\testes\publicacao.robot">
+<test id="s1-s3-t1" name="Caso de Teste: Criar uma publicação textual corretamente" line="7">
+<kw name="Dado que eu acesse e realize o login" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:45.428396" level="INFO">Opening browser 'Chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>url=https://www.facebook.com/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-29T10:57:45.427389" elapsed="2.225595"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-29T10:57:47.653525" elapsed="0.028725"/>
+</kw>
+<kw name="Dado que eu preencha o email" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:47.684462" elapsed="0.027096"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:47.711558" level="INFO">Typing text 'ysavilela.dev@gmail.com' into text field 'css=input[data-testid="royal_email"]'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:47.711558" elapsed="0.162713"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:47.683225" elapsed="0.191368"/>
+</kw>
+<kw name="E preencha a senha" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:47.874593" elapsed="0.024663"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:47.899256" level="INFO">Typing text 'ysa.dev030515' into text field 'id:pass'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:47.899256" elapsed="0.100193"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:47.874593" elapsed="0.124856"/>
+</kw>
+<kw name="E clique no botao de entrar" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:48.013476" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Entrar')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:48.013476" elapsed="0.037588"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:47.999449" elapsed="0.051615"/>
+</kw>
+<kw name="Entao sou redirecionado para o feed inicial" owner="login_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-29T10:57:53.051277" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-29T10:57:48.051064" elapsed="5.000213"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:53.051277" level="INFO">Executing JavaScript:
+document.querySelector('.__fb-light-mode.x1n2onr6.x1vjfegm').remove();
+Without any arguments.</msg>
+<arg>document.querySelector('.${DIV_BLOQUEIO.replace(' ', '.')}').remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-05-29T10:57:53.051277" elapsed="0.014769"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:53.086224" level="INFO">Element 'css:.__fb-light-mode.x1n2onr6.x1vjfegm' did not exist.</msg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:53.067641" elapsed="0.018583"/>
+</kw>
+<arg>Element Should Not Be Visible</arg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-05-29T10:57:53.067000" elapsed="0.019224"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ICONE_FORYOU}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:53.087307" elapsed="0.027941"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:53.115248" level="INFO">Clicking element 'css=a[aria-label="Página inicial"]'.</msg>
+<arg>${ICONE_FORYOU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:53.115248" elapsed="0.177382"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:48.051064" elapsed="5.241566"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:45.427389" elapsed="7.865241"/>
+</kw>
+<kw name="Dado que eu abra area de criar publicacao" owner="publicacao_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ABRIR_AREA_CONTEUDO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:53.295527" elapsed="0.392852"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:53.688379" level="INFO">Clicking element 'xpath=//span[contains(text(), 'No que você está pensando, Pedro?')]'.</msg>
+<arg>${ABRIR_AREA_CONTEUDO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:53.688379" elapsed="0.110062"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:53.294268" elapsed="0.504173"/>
+</kw>
+<kw name="E digite o conteudo" owner="publicacao_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${AREA_CONTEUDO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:53.799769" elapsed="0.580604"/>
+</kw>
+<kw name="Word" owner="FakerLibrary">
+<msg time="2024-05-29T10:57:54.380373" level="INFO">${Conteudo} = consequuntur</msg>
+<var>${Conteudo}</var>
+<doc>Generate a word.</doc>
+<status status="PASS" start="2024-05-29T10:57:54.380373" elapsed="0.000804"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-05-29T10:57:54.381177" level="INFO">${CONTEUDO} = consequuntur</msg>
+<arg>${CONTEUDO}</arg>
+<arg>${Conteudo}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-05-29T10:57:54.381177" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:54.381177" level="INFO">Typing text 'consequuntur' into text field 'css=div[aria-label="No que você está pensando, Pedro?"]'.</msg>
+<arg>${AREA_CONTEUDO}</arg>
+<arg>${Conteudo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:54.381177" elapsed="0.199919"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:53.799769" elapsed="0.781327"/>
+</kw>
+<kw name="E verificar se o botao de publicar foi habilitado" owner="publicacao_page">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:54.611545" level="INFO">Element 'xpath=//div[@aria-label="Publicar" and @aria-disabled="true"]' did not exist.</msg>
+<arg>${BOTAO_DESATIVADO}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:54.581096" elapsed="0.030449"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:54.581096" elapsed="0.030449"/>
+</kw>
+<kw name="E pressione o botao de publicar" owner="publicacao_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:54.613555" level="INFO">Clicking element 'css=div[aria-label="Publicar"]'.</msg>
+<arg>${BOTAO_CRIAR_PUBLICACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:57:54.613555" elapsed="0.094688"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${CARREGANDO_PUBLICACAO}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:54.708243" elapsed="2.090618"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:54.612546" elapsed="2.186315"/>
+</kw>
+<kw name="Entao a publicacao deve ser exibida no feed" owner="publicacao_page">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-29T10:57:56.798861" level="INFO">${Publicacao} = xpath=//div[contains(text(), 'consequuntur')]</msg>
+<var>${Publicacao}</var>
+<arg>xpath=//div[contains(text(), '${CONTEUDO}')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-29T10:57:56.798861" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Publicacao}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:56.798861" elapsed="0.282230"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:57.103573" level="INFO">Element 'xpath=//div[contains(text(), 'consequuntur')]' is displayed.</msg>
+<arg>${Publicacao}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:57:57.081091" elapsed="0.022482"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:56.798861" elapsed="0.304712"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-29T10:57:57.104612" elapsed="2.215437"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:57.104612" elapsed="2.216447"/>
+</kw>
+<doc>Verifica se o campo de texto aceita entrada, habilita o botão de publicar após a inserção de texto, e garante que o post aparece no feed.</doc>
+<tag>Realizar publicação</tag>
+<status status="PASS" start="2024-05-29T10:57:45.418125" elapsed="13.902934"/>
+</test>
+<test id="s1-s3-t2" name="Caso de Teste: Criar uma publicacao com midia" line="16">
+<kw name="Dado que eu acesse e realize o login" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:57:59.321059" level="INFO">Opening browser 'Chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>url=https://www.facebook.com/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-29T10:57:59.321059" elapsed="2.233056"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-29T10:58:01.554115" elapsed="0.029831"/>
+</kw>
+<kw name="Dado que eu preencha o email" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:01.583946" elapsed="0.043378"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:01.627324" level="INFO">Typing text 'ysavilela.dev@gmail.com' into text field 'css=input[data-testid="royal_email"]'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:01.627324" elapsed="0.197806"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:01.583946" elapsed="0.241184"/>
+</kw>
+<kw name="E preencha a senha" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:01.825130" elapsed="0.022535"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:01.848713" level="INFO">Typing text 'ysa.dev030515' into text field 'id:pass'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:01.847665" elapsed="0.109466"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:01.825130" elapsed="0.132001"/>
+</kw>
+<kw name="E clique no botao de entrar" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:01.957131" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Entrar')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:01.957131" elapsed="0.046332"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:01.957131" elapsed="0.046332"/>
+</kw>
+<kw name="Entao sou redirecionado para o feed inicial" owner="login_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-29T10:58:07.005231" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-29T10:58:02.004579" elapsed="5.000652"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:07.005231" level="INFO">Executing JavaScript:
+document.querySelector('.__fb-light-mode.x1n2onr6.x1vjfegm').remove();
+Without any arguments.</msg>
+<arg>document.querySelector('.${DIV_BLOQUEIO.replace(' ', '.')}').remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-05-29T10:58:07.005231" elapsed="0.009412"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:07.026773" level="INFO">Element 'css:.__fb-light-mode.x1n2onr6.x1vjfegm' did not exist.</msg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:07.014643" elapsed="0.012130"/>
+</kw>
+<arg>Element Should Not Be Visible</arg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-05-29T10:58:07.014643" elapsed="0.012130"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ICONE_FORYOU}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:07.026773" elapsed="0.013364"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:07.040137" level="INFO">Clicking element 'css=a[aria-label="Página inicial"]'.</msg>
+<arg>${ICONE_FORYOU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:07.040137" elapsed="0.144858"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:02.004579" elapsed="5.180416"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:57:59.321059" elapsed="7.863936"/>
+</kw>
+<kw name="Dado que eu abra area de criar publicacao" owner="publicacao_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ABRIR_AREA_CONTEUDO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:07.185993" elapsed="0.559148"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:07.745141" level="INFO">Clicking element 'xpath=//span[contains(text(), 'No que você está pensando, Pedro?')]'.</msg>
+<arg>${ABRIR_AREA_CONTEUDO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:07.745141" elapsed="0.130557"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:07.185993" elapsed="0.691299"/>
+</kw>
+<kw name="E adicione uma midia" owner="publicacao_page">
+<kw name="Copiar Imagem para Area de Tranferencia" owner="publicacao_page">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-05-29T10:58:07.886429" level="INFO">Running command 'C:\dev\tools\nircmd\nircmd\nircmd.exe clipboard copyimage C:\dev\workspace\Teste-Facebook\images\bolt.jpg 2&gt;&amp;1'.</msg>
+<arg>${NIRCMD_PATH} clipboard copyimage ${CaminhoDaImagem}</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-05-29T10:58:07.877292" elapsed="0.245185"/>
+</kw>
+<arg>${CAMINHO_IMAGEM}</arg>
+<status status="PASS" start="2024-05-29T10:58:07.877292" elapsed="0.245185"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${AREA_CONTEUDO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:08.122477" elapsed="0.324570"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:08.447047" level="INFO">Clicking element 'css=div[aria-label="No que você está pensando, Pedro?"]'.</msg>
+<arg>${AREA_CONTEUDO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:08.447047" elapsed="0.079863"/>
+</kw>
+<kw name="Foco no Browser" owner="publicacao_page">
+<kw name="Get Window Handles" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:08.531961" level="INFO">${window_handles} = ['896D67FD2626474679CD272CB8F615CF']</msg>
+<var>${window_handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<status status="PASS" start="2024-05-29T10:58:08.530952" elapsed="0.001009"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>${window_handles[0]}</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:08.533373" elapsed="0.012277"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:08.526910" elapsed="0.020194"/>
+</kw>
+<kw name="Colar da área de transferência" owner="publicacao_page">
+<kw name="Send" owner="AutoItLibrary">
+<arg>^v</arg>
+<doc>method Send</doc>
+<status status="PASS" start="2024-05-29T10:58:08.549381" elapsed="0.026414"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:08.548374" elapsed="0.027421"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:08.861915" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../prints/captura-5.jpg"&gt;&lt;img src="../../prints/captura-5.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-29T10:58:08.861915" level="INFO">C:\Users\Magna\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\selenium\webdriver\remote\webdriver.py:822: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  return self.get_screenshot_as_file(filename)</msg>
+<arg>../../prints/captura-{index}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-05-29T10:58:08.576808" elapsed="0.285107"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${IMAGEM_ANEXADA}</arg>
+<arg>90s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:08.861915" elapsed="0.274216"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:09.168251" level="INFO">Element 'css=div[aria-label="Mídia anexada"]' is displayed.</msg>
+<arg>${IMAGEM_ANEXADA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:09.136131" elapsed="0.032120"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:07.877292" elapsed="1.290959"/>
+</kw>
+<kw name="E verificar se o botao de publicar foi habilitado" owner="publicacao_page">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:09.182314" level="INFO">Element 'xpath=//div[@aria-label="Publicar" and @aria-disabled="true"]' did not exist.</msg>
+<arg>${BOTAO_DESATIVADO}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:09.170329" elapsed="0.011985"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:09.169259" elapsed="0.013055"/>
+</kw>
+<kw name="E pressione o botao de publicar" owner="publicacao_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:09.182314" level="INFO">Clicking element 'css=div[aria-label="Publicar"]'.</msg>
+<arg>${BOTAO_CRIAR_PUBLICACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:09.182314" elapsed="0.137656"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${CARREGANDO_PUBLICACAO}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:09.319970" elapsed="3.871073"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:09.182314" elapsed="4.008729"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-29T10:58:13.191043" elapsed="2.265259"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:13.191043" elapsed="2.265259"/>
+</kw>
+<doc>Verifica se o campo de texto aceita entrada, permite upload de mídia, habilita o botão de publicar após inserir texto e mídia, e garante que o post com mídia aparece no feed.</doc>
+<tag>Realizar publicação</tag>
+<status status="PASS" start="2024-05-29T10:57:59.321059" elapsed="16.135243"/>
+</test>
+<test id="s1-s3-t3" name="Caso de Teste: Verifica se botao permanece desabilitado se nao houver conteudo a ser publicado" line="24">
+<kw name="Dado que eu acesse e realize o login" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:15.456302" level="INFO">Opening browser 'Chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>url=https://www.facebook.com/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-29T10:58:15.456302" elapsed="2.232097"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-29T10:58:17.688399" elapsed="0.031121"/>
+</kw>
+<kw name="Dado que eu preencha o email" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:17.719520" elapsed="0.037971"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:17.757491" level="INFO">Typing text 'ysavilela.dev@gmail.com' into text field 'css=input[data-testid="royal_email"]'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:17.757491" elapsed="0.147068"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:17.719520" elapsed="0.185717"/>
+</kw>
+<kw name="E preencha a senha" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:17.905237" elapsed="0.013989"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:17.919226" level="INFO">Typing text 'ysa.dev030515' into text field 'id:pass'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:17.919226" elapsed="0.140934"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:17.905237" elapsed="0.154923"/>
+</kw>
+<kw name="E clique no botao de entrar" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:18.061181" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Entrar')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:18.060160" elapsed="0.063381"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:18.060160" elapsed="0.063381"/>
+</kw>
+<kw name="Entao sou redirecionado para o feed inicial" owner="login_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-29T10:58:23.125349" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-29T10:58:18.124327" elapsed="5.001022"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:23.125349" level="INFO">Executing JavaScript:
+document.querySelector('.__fb-light-mode.x1n2onr6.x1vjfegm').remove();
+Without any arguments.</msg>
+<arg>document.querySelector('.${DIV_BLOQUEIO.replace(' ', '.')}').remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-05-29T10:58:23.125349" elapsed="0.018866"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:23.156921" level="INFO">Element 'css:.__fb-light-mode.x1n2onr6.x1vjfegm' did not exist.</msg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:23.144215" elapsed="0.012706"/>
+</kw>
+<arg>Element Should Not Be Visible</arg>
+<arg>css:.${DIV_BLOQUEIO.replace(' ', '.')}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-05-29T10:58:23.144215" elapsed="0.012706"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ICONE_FORYOU}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:23.156921" elapsed="0.012350"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:23.169271" level="INFO">Clicking element 'css=a[aria-label="Página inicial"]'.</msg>
+<arg>${ICONE_FORYOU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:23.169271" elapsed="0.138425"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:18.124327" elapsed="5.183369"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:15.456302" elapsed="7.851394"/>
+</kw>
+<kw name="Dado que eu abra area de criar publicacao" owner="publicacao_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ABRIR_AREA_CONTEUDO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:23.309733" elapsed="0.549487"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:23.859220" level="INFO">Clicking element 'xpath=//span[contains(text(), 'No que você está pensando, Pedro?')]'.</msg>
+<arg>${ABRIR_AREA_CONTEUDO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-29T10:58:23.859220" elapsed="0.104902"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:23.308690" elapsed="0.655432"/>
+</kw>
+<kw name="Entao o botao de publicar deve estar desabilitado" owner="publicacao_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_DESATIVADO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:23.964122" elapsed="0.643509"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-29T10:58:24.629735" level="INFO">Element 'xpath=//div[@aria-label="Publicar" and @aria-disabled="true"]' is displayed.</msg>
+<arg>${BOTAO_DESATIVADO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-29T10:58:24.607631" elapsed="0.022104"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:23.964122" elapsed="0.666699"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-29T10:58:24.631822" elapsed="2.223850"/>
+</kw>
+<status status="PASS" start="2024-05-29T10:58:24.630821" elapsed="2.224851"/>
+</kw>
+<doc>Verifica se o campo de texto aceita entrada, permite upload de mídia, habilita o botão de publicar após inserir texto e mídia, e garante que o post com mídia aparece no feed.</doc>
+<tag>Realizar publicação</tag>
+<status status="PASS" start="2024-05-29T10:58:15.456302" elapsed="11.399370"/>
+</test>
+<status status="PASS" start="2024-05-29T10:57:45.418125" elapsed="41.437547"/>
+</suite>
+<status status="PASS" start="2024-05-29T10:56:20.102491" elapsed="126.761785"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">Criar evento</stat>
+<stat pass="3" fail="0" skip="0">Login</stat>
+<stat pass="3" fail="0" skip="0">Realizar publicação</stat>
+</tag>
+<suite>
+<stat pass="9" fail="0" skip="0" id="s1" name="Testes">Testes</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="Evento">Testes.Evento</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s2" name="Login">Testes.Login</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s3" name="Publicacao">Testes.Publicacao</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
