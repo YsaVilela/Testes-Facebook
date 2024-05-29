@@ -12,6 +12,8 @@ ${CAMINHO_IMAGEM}            C:\\dev\\workspace\\Teste-Facebook\\images\\bolt.jp
 ${IMAGEM_ANEXADA}            css=div[aria-label="Mídia anexada"]
 ${CARREGANDO_PUBLICACAO}     xpath=//span[contains(text(), 'Publicando')]
 
+${BOTAO_FECHAR}              xpath=//div[@aria-label="Fechar"]/parent::div
+
 ${CONTEUDO}                  None
 
 ${NIRCMD_PATH}               C:\\dev\\tools\\nircmd\\nircmd\\nircmd.exe
@@ -63,7 +65,13 @@ Foco no Browser
     ${window_handles}=    Get Window Handles
     Switch Window         ${window_handles[0]} 
 
+E pressione o botao de fechar 
+    Wait Until Element Is Visible    ${BOTAO_FECHAR}   10s
+    Click Element                    ${BOTAO_FECHAR}   
 
+Entao conteudo deve permaner no campo de criar publicacao como rascunho
+    ${AreaDeRascunho}                    Set Variable                xpath=//div[@aria-label="Criar uma publicação"]/div[1]/div/div[1]/span[contains(text(), '${CONTEUDO}')]
+    Wait Until Element Is Visible        ${AreaDeRascunho}    10s
+    Element Should Be Visible            ${AreaDeRascunho}     
 
-
-
+ 
